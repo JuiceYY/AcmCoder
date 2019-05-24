@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_sky">
+
+    <ImageView
+        android:id="@+id/icon_apple"
+        android:layout_width="26dp"
+        android:layout_height="37dp"
+        android:src="@drawable/icon_apple"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="21dp"/>
+
+    <ImageView
+        android:id="@+id/icon1"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:src="@drawable/icon1"
+        android:layout_toRightOf="@id/icon_apple"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="15dp"/>
+
+    <ImageView
+        android:id="@+id/icon2"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:src="@drawable/icon2"
+        android:layout_toRightOf="@id/icon1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="15dp"/>
+
+    <ImageView
+        android:id="@+id/icon3"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:src="@drawable/icon3"
+        android:layout_toRightOf="@id/icon2"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="15dp"/>
+
+    <ImageView
+        android:id="@+id/icon4"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="62dp"
+        android:layout_toRightOf="@id/icon_apple"
+        android:src="@drawable/icon4" />
+
+    <ImageView
+        android:id="@+id/icon5"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="62dp"
+        android:layout_toRightOf="@id/icon4"
+        android:src="@drawable/icon5" />
+
+    <ImageView
+        android:id="@+id/icon6"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="62dp"
+        android:layout_toRightOf="@id/icon5"
+        android:src="@drawable/icon6" />
+
+    <ImageView
+        android:id="@+id/icon7"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="103dp"
+        android:layout_toRightOf="@id/icon_apple"
+        android:src="@drawable/icon7" />
+
+    <ImageView
+        android:id="@+id/icon8"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="103dp"
+        android:layout_toRightOf="@id/icon7"
+        android:src="@drawable/icon8" />
+
+    <ImageView
+        android:id="@+id/icon9"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="103dp"
+        android:layout_toRightOf="@id/icon8"
+        android:src="@drawable/icon9" />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/tree"/>
+
+    <ImageView
+        android:layout_width="284dp"
+        android:layout_height="181dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="200dp"
+        android:src="@drawable/treeapples" />
+
+
+
+
+</RelativeLayout>

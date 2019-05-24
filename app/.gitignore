@@ -1,0 +1,8 @@
+/build
+/debug
+/release
+*.iml
+
+src/androidTest
+
+src/test

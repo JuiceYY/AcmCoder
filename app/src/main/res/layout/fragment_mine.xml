@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/_1"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:background="@color/colorPrimary">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/imageview_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="41dp"
+            />
+
+        <TextView
+            android:id="@+id/textview_username"
+            android:text="测试用户"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imageview_user"
+            android:layout_marginTop="13dp"
+            android:textColor="#414141"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_mine_favourite"
+        android:layout_below="@id/_1"
+        android:layout_marginTop="19dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/_2_1"
+            android:layout_width="37dp"
+            android:layout_height="35dp"
+            android:src="@drawable/star"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/_2_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mine_favorite"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/_2_1"
+            android:layout_marginStart="19dp"
+            android:textColor="#414141"
+            android:textSize="17sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_mine_follow"
+        android:layout_below="@id/item_mine_favourite"
+        android:layout_marginTop="19dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/_3_1"
+            android:layout_width="37dp"
+            android:layout_height="35dp"
+            android:src="@drawable/eye"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/_3_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mine_follow"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/_3_1"
+            android:layout_marginStart="19dp"
+            android:textColor="#414141"
+            android:textSize="17sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_mine_contract"
+        android:layout_below="@id/item_mine_follow"
+        android:layout_marginTop="19dp"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#ffffff">
+
+        <ImageView
+            android:id="@+id/_4_1"
+            android:layout_width="37dp"
+            android:layout_height="35dp"
+            android:src="@drawable/mail"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/_4_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mine_contract"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/_4_1"
+            android:layout_marginStart="19dp"
+            android:textColor="#414141"
+            android:textSize="17sp"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

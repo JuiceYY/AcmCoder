@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginTop="5dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardPreventCornerOverlap="true"
+    card_view:cardUseCompatPadding="true"
+    card_view:contentPadding="5dp"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/bg_tree"/>
+
+
+        <TextView
+            android:id="@+id/tv_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="21sp"
+            android:textColor="#414141"
+            android:textStyle="bold"
+            android:text="牛客NOIP竞赛水平测试"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="21dp" />
+
+        <TextView
+            android:id="@+id/tv_platform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:textColor="#414141"
+            android:text="比赛平台"
+            android:layout_below="@id/tv_game"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/platform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="平台"
+            android:textColor="#414141"
+            android:textSize="19sp"
+            android:layout_alignTop="@id/tv_platform"
+            android:layout_toEndOf="@id/tv_platform"
+            android:layout_marginLeft="30dp"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:textColor="#414141"
+            android:text="开始时间"
+            android:layout_below="@id/tv_platform"
+            android:layout_alignStart="@id/tv_platform"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间"
+            android:textColor="#414141"
+            android:textSize="19sp"
+            android:layout_alignTop="@id/tv_time"
+            android:layout_toEndOf="@id/tv_time"
+            android:layout_marginLeft="30dp"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

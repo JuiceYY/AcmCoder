@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">智慧树</string>
+    <string name="tab1">智慧树</string>
+    <string name="tab2">比赛</string>
+    <string name="tab3">我的</string>
+    <string name="mine_favorite">我的收藏</string>
+    <string name="mine_follow">我的关注</string>
+    <string name="mine_contract">联系我们</string>
+    <string name="splash_text">智慧树</string>
+</resources>
