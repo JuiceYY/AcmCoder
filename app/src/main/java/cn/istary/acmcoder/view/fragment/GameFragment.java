@@ -1,5 +1,6 @@
 package cn.istary.acmcoder.view.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,12 +14,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
 import cn.istary.acmcoder.R;
 import cn.istary.acmcoder.adapter.GameAdapter;
+import cn.istary.acmcoder.base.MessCode;
 import cn.istary.acmcoder.contract.IGameContract;
 import cn.istary.acmcoder.data.response.Game;
 import cn.istary.acmcoder.presenter.GamePresenter;
@@ -44,9 +47,13 @@ public class GameFragment extends Fragment implements IGameContract.IView {
 
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
+    private TextView mTvEmpty;
+
+    private TextView mTvServerError;
+
     private final static int MSG_DISMISS_DIALOG = 1000;
 
-    //非静态Handler会内存泄漏, 不推荐
+    @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
 
         @Override
@@ -54,11 +61,12 @@ public class GameFragment extends Fragment implements IGameContract.IView {
             super.handleMessage(msg);
             switch (msg.what) {
                 case MSG_DISMISS_DIALOG:
-                    if(null != mDialog){
-                        if(mDialog.isShowing()){
+                    if (null != mDialog) {
+                        if (mDialog.isShowing()) {
                             Log.d(TAG, "handler get mess");
                             mDialog.dismiss();
                             Toast.makeText(getActivity(), "服务器无响应", Toast.LENGTH_SHORT).show();
+                            mSwipeRefreshLayout.setRefreshing(false);
                         }
                     }
                     break;
@@ -81,6 +89,8 @@ public class GameFragment extends Fragment implements IGameContract.IView {
         View view = inflater.inflate(R.layout.fragment_game, container, false);
         mListView = view.findViewById(R.id.lv_game);
         mSwipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout);
+        mTvEmpty = view.findViewById(R.id.tv_no_game);
+        mTvServerError = view.findViewById(R.id.tv_server_error);
 
         //设置刷新
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
@@ -92,6 +102,11 @@ public class GameFragment extends Fragment implements IGameContract.IView {
         });
 
 
+        mDialog = new ProgressDialog(getActivity());
+        mDialog.setMessage("正在加载");
+        mDialog.setCancelable(true);
+        mDialog.setCanceledOnTouchOutside(false);
+
         isPrepared = true;
         mPresenter.queryGame();
         return view;
@@ -100,9 +115,6 @@ public class GameFragment extends Fragment implements IGameContract.IView {
     @Override
     public void showProcessDialog() {
         mHandler.sendEmptyMessageDelayed(MSG_DISMISS_DIALOG, 5000);
-        mDialog = new ProgressDialog(getActivity());
-        mDialog.setMessage("正在加载");
-        mDialog.setCancelable(false);
         mDialog.show();
     }
 
@@ -135,5 +147,21 @@ public class GameFragment extends Fragment implements IGameContract.IView {
     public void showError(String errorMsg) {
         mSwipeRefreshLayout.setRefreshing(false);
         Toast.makeText(getActivity(), "error: " + errorMsg, Toast.LENGTH_SHORT).show();
+        mTvServerError.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void showEmpty(int reason) {
+        switch (reason) {
+            case MessCode.EMPTY_RESPONSE:
+                mTvEmpty.setVisibility(View.VISIBLE);
+                break;
+            case MessCode.SERVER_ERROR:
+                mTvServerError.setVisibility(View.VISIBLE);
+                break;
+            default:
+                break;
+        }
+
     }
 }

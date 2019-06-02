@@ -7,4 +7,6 @@
     <string name="mine_follow">我的关注</string>
     <string name="mine_contract">联系我们</string>
     <string name="splash_text">智慧树</string>
+    <string name="no_game_notice">未来几天没有任何比赛哦...</string>
+    <string name="server_error">服务器发生了错误...</string>
 </resources>

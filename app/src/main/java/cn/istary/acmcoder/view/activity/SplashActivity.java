@@ -1,5 +1,6 @@
 package cn.istary.acmcoder.view.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -25,7 +26,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private TextView mTextView;
 
-    //这么做会内存泄漏, 不推荐
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

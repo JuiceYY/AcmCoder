@@ -25,6 +25,8 @@ public interface IGameContract {
         void showGame(List<Game> gameList);
 
         void showError(String errorMsg);
+
+        void showEmpty(int reason);
     }
 
     interface IPresenter{

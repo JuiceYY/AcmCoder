@@ -5,6 +5,7 @@ import android.util.Log;
 
 import java.util.List;
 
+import cn.istary.acmcoder.base.MessCode;
 import cn.istary.acmcoder.contract.IGameContract;
 import cn.istary.acmcoder.data.model.GameModel;
 import cn.istary.acmcoder.data.response.GameResponse;
@@ -40,6 +41,9 @@ public class GamePresenter implements IGameContract.IPresenter {
                 Log.e(TAG, response+"");
                 if(response.getCode() == 0){
                     //服务器返回成功
+                    if(response.getData() == null || response.getData().size() == 0){
+                        mView.showEmpty(MessCode.EMPTY_RESPONSE);
+                    }
                     mView.showGame(response.getData());
                 }else{
                     mView.showError("error: code = " + response.getCode() + ", msg = " + response.getMsg());
