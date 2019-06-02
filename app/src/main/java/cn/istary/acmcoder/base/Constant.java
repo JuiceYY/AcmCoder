@@ -7,7 +7,7 @@ package cn.istary.acmcoder.base;
 
 public class Constant {
 
-    public static String DOMAIN = "http://cxd.mynatapp.cc";
+    public static String DOMAIN = "http://120.78.131.71:8324";
 
     public static String URL_BASIC = "https://oi-wiki.org/basic/";
     public static String URL_SEARCH = "https://oi-wiki.org/search/";
