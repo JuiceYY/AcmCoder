@@ -103,7 +103,7 @@ public class GameAdapter extends BaseAdapter {
                 //Toast.makeText(mContext, "url = " + game.getUrl(), Toast.LENGTH_SHORT).show();
                 if(mContext instanceof Activity){
                     Intent intent = new Intent(mContext, WebViewActivity.class);
-                    intent.putExtra("url", game.getUrl());
+                    intent.putExtra("url", "http://"+game.getUrl());
                     mContext.startActivity(intent);
                 }
 
